@@ -3,23 +3,51 @@
     margin: 0;
 }
 .content{
+    padding-top: 20px;
     text-align: center;
-    background-color: cornflowerblue;
+    background-color: #aeeded;
     margin-left: 20vw;
     margin-right: 20vw;
     padding-left: 2vw;
     padding-right: 2vw;
 }
+h1{
+    font-size: 3em;
+    margin-bottom: 30px;
+}
 .bar{
+    border: 2px solid black;
     background-color: white;
     height: 20vh;
     width: 56vw;
     border-radius: 50px;
+    margin-bottom: 40px;
 }
 .value{
-    background-color: red;
+    background-color: rgb(13, 123, 212);
     width: 5vw;
     height: 20vh;
     border-radius: 50px;
     
+}
+.output{
+    
+    font-size: 1.4em;
+    margin-bottom: 40px;
+}
+button{
+    border: none;
+    padding: 20px 10px;
+    width: 10vw;
+    font-size: 1.3em;
+    border-radius: 50%;
+    background: linear-gradient(176deg, rgba(0,212,255,1) 0%, rgba(21,92,107,1) 100%);
+    color:white;
+ /*   box-shadow: 11px 10px 17px 6px rgba(34, 60, 80, 0.6);*/
+}
+button:hover{
+    background: linear-gradient(175deg, rgba(0,212,255,1) 0%, rgba(31,153,178,1) 100%);
+}
+button:active{
+    background: linear-gradient(175deg, rgba(0,212,255,1) 0%, rgba(125,233,255,1) 100%);
 }
