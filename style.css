@@ -1,0 +1,25 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+.content{
+    text-align: center;
+    background-color: cornflowerblue;
+    margin-left: 20vw;
+    margin-right: 20vw;
+    padding-left: 2vw;
+    padding-right: 2vw;
+}
+.bar{
+    background-color: white;
+    height: 20vh;
+    width: 56vw;
+    border-radius: 50px;
+}
+.value{
+    background-color: red;
+    width: 5vw;
+    height: 20vh;
+    border-radius: 50px;
+    
+}
