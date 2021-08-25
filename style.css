@@ -2,6 +2,9 @@
     padding: 0;
     margin: 0;
 }
+.conteiner{
+    background-image: url(1.jpg);
+}
 .content{
     padding-top: 20px;
     text-align: center;
@@ -18,7 +21,7 @@
 .bar{
     border: 2px solid black;
     background-color: white;
-    height: 15vh;
+    height: 10vh;
     width: 56vw;
     border-radius: 50px;
     margin-bottom: 40px;
@@ -27,7 +30,7 @@
 .value{
     background-color: rgb(13, 123, 212);
     width: 6vw;
-    height: 15vh;
+    height: 10vh;
     border-radius: 50px;
     overflow:hidden;
     
@@ -37,7 +40,7 @@
     font-size: 1.4em;
     margin-bottom: 40px;
 }
-button{
+.push{
     cursor: pointer;
     border: none;
     padding: 20px 10px;
@@ -49,10 +52,10 @@ button{
     color:white;
  /*   box-shadow: 11px 10px 17px 6px rgba(34, 60, 80, 0.6);*/
 }
-button:hover{
+.push:hover{
     background: linear-gradient(175deg, rgba(0,212,255,1) 0%, rgba(31,153,178,1) 100%);
 }
-button:active{
+.push:active{
     background: linear-gradient(175deg, rgba(0,212,255,1) 0%, rgba(125,233,255,1) 100%);
 }
 
@@ -78,4 +81,29 @@ button:active{
 }
 p{
     margin: 20px 20px;
+}
+.control{
+    margin: 40px 5vw;
+    display: grid;
+    grid-template-columns: 20vw 20vw;
+    justify-content: space-between;
+}
+div[class^="am"]{
+    border: 2px solid black;
+    width: 20vw;
+    max-height: 200px;
+    height: 30vh;
+    min-height: 150px;
+    max-height: 400px;
+}
+.blocked{
+    background:crimson
+}
+.active{
+    background:rgb(255, 237, 76);
+    cursor:pointer;
+}
+.reload-btn{
+    width: 80px;
+    height: 20px;
 }
