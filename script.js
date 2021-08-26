@@ -19,8 +19,8 @@ let score = 0;
 let helper = 0;
 let flag = 0;
 let scale = 1;
-let costHelper = 2000; //flag for Fair function
-let costScale = 1000; //flag for Fair function
+let costHelper = 2000; //flag for Fair function 2000
+let costScale = 1000; //flag for Fair function 1000
 //255/60/20
 
 let newDiv = document.createElement("div");
@@ -90,28 +90,28 @@ function Fair() {
 
 
 function CheckHelps1() {
-    if (score > costHelper) {
+    if (score >= costHelper) {
         divHelper.classList.add("active");
-        divScale.classList.add("active");
-        flagHelps = 1;
+        flagHelper = 1;
     } else false;
 }
 function CheckHelps2() {
-    if (score > costScale) {
+    if (score >= costScale) {
         divScale.classList.add("active");
         flagScale = 1;
     } else false;
 }
 
 divHelper.onclick = () => {
-    if (flagHelps == 1) {
+    if (flagHelper == 1) {
         score = score - costHelper;
         helper += 10;
-        cost += 1000;
-        console.log(cost);
-        flagHelps = 0;
+        costHelper += 1000;
+        flagHelper = 0;
+        flagScale = 0;
         helperCostString.innerHTML = `Cost: ${costHelper}`;
         divHelper.classList.remove("active");
+        divScale.classList.remove("active");
     } else return false;
 }
 
@@ -121,9 +121,9 @@ divScale.onclick = () => {
         scale += 0.5;
         costScale += 1000;
         flagScale = 0;
-        flagHelps = 0;
-        console.log(scale);
+        flagHelper = 0;
         scaleCostString.innerHTML = `Cost: ${costScale}`;
         divScale.classList.remove("active");
+        divHelper.classList.remove("active");
     } else return false;
 }
