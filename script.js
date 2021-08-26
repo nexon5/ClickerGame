@@ -4,19 +4,23 @@ let out = document.querySelector(".output");
 let fon = document.querySelector(".content");
 let divHelper = document.querySelector(".am-helper");
 let divScale = document.querySelector(".am-scale");
+let helperCostString = document.querySelector(".cost");
+let scaleCostString = document.querySelector(".scale-cost")
 
 
 
 
 let x = 6;
 let level = 1;
-// let red = 174;
-// let green = 237;
-// let blue = 237;
+let red = 255;
+let green = 75;
+let blue = 70;
 let score = 0;
 let helper = 0;
 let flag = 0;
-let cost = 2000; //flag for Fair function
+let scale = 1;
+let costHelper = 2000; //flag for Fair function
+let costScale = 1000; //flag for Fair function
 //255/60/20
 
 let newDiv = document.createElement("div");
@@ -30,23 +34,28 @@ btnRel.onclick = () => {
 
 
 
-/*function changeTheme() {
-    if (x > 0) {
-        fon.style.background = `rgb(${red += },${green -= level * 2},${blue -= x})`;
+function changeTheme() {
+    if ((x > 0) && (x < 21)) {
+        fon.style.background = `rgb(${red += 5},${green -= level - 5},${blue -= 5})`;
+        console.log("Vpered")
+    } else if ((x >= 21) && (x < +41)) {
+        fon.style.background = `rgb(255, 120,57)`;
         console.log("Vpered")
     } else {
-        fon.style.background = `rgb(${red -= 10},${green += level * 3},${blue += x})`;
+        fon.style.background = `rgb(255,189,29)`;
         console.log("NAZAD")
     }
-}*/
+}
 
 btn.onclick = () => {
     if (x < 56) {
         x = x + 5 + helper - level * 2;//formula
         value.style.width = x + "vw";
-        score += x;
+        score += Math.round(x * scale);
         out.innerHTML = `Your level is ${level}!!!<br> Your score is ${score}!!!`;
-        CheckHelps();
+        CheckHelps1();
+        CheckHelps2();
+        changeTheme();
     } else {
         x = 6;
         level++
@@ -77,26 +86,44 @@ function Fair() {
 
 
 
-divHelper.innerHTML = `<h2>Helper</h2>
-<p>Buy for increcing liter per one pushing<br><br> Press for upgrading <br>Cost: ${cost} </p>`;
-divScale.innerHTML = `<h2>Scaler</h2>
-<p>Automatical system<br><br> Press for upgrading <br>Cost:  ${cost} </p>`;
 
-function CheckHelps() {
-    if (score > cost) {
+
+
+function CheckHelps1() {
+    if (score > costHelper) {
         divHelper.classList.add("active");
         divScale.classList.add("active");
         flagHelps = 1;
     } else false;
 }
+function CheckHelps2() {
+    if (score > costScale) {
+        divScale.classList.add("active");
+        flagScale = 1;
+    } else false;
+}
 
 divHelper.onclick = () => {
     if (flagHelps == 1) {
-        score = score - cost;
+        score = score - costHelper;
         helper += 10;
         cost += 1000;
         console.log(cost);
         flagHelps = 0;
+        helperCostString.innerHTML = `Cost: ${costHelper}`;
         divHelper.classList.remove("active");
+    } else return false;
+}
+
+divScale.onclick = () => {
+    if (flagScale == 1) {
+        score = score - costScale;
+        scale += 0.5;
+        costScale += 1000;
+        flagScale = 0;
+        flagHelps = 0;
+        console.log(scale);
+        scaleCostString.innerHTML = `Cost: ${costScale}`;
+        divScale.classList.remove("active");
     } else return false;
 }

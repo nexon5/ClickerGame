@@ -8,11 +8,13 @@
 .content{
     padding-top: 20px;
     text-align: center;
-    background-color: #aeeded;
     margin-left: 20vw;
     margin-right: 20vw;
     padding-left: 2vw;
     padding-right: 2vw;
+    min-height: 100vh;
+    background: radial-gradient(circle, rgba(251,153,63,1) 0%, rgba(252,75,70,1) 100%);
+    
 }
 .mainH1{
     font-size: 3em;
@@ -32,8 +34,7 @@
     width: 6vw;
     height: 10vh;
     border-radius: 50px;
-    overflow:hidden;
-    
+    overflow:hidden;    
 }
 .output{
     
@@ -49,8 +50,8 @@
     font-size: 1.3em;
     border-radius: 50%;
     background: linear-gradient(176deg, rgba(0,212,255,1) 0%, rgba(21,92,107,1) 100%);
-    color:white;
- /*   box-shadow: 11px 10px 17px 6px rgba(34, 60, 80, 0.6);*/
+    color:rgb(0, 0, 0);
+ 
 }
 .push:hover{
     background: linear-gradient(175deg, rgba(0,212,255,1) 0%, rgba(31,153,178,1) 100%);
@@ -61,7 +62,7 @@
 
 .end{
     position: absolute;
-    height: 500px;
+    height: auto;
     width: 500px;
     background: chocolate;
     border: 2px solid black;
@@ -89,21 +90,52 @@ p{
     justify-content: space-between;
 }
 div[class^="am"]{
+    border-radius: 40px; 
     border: 2px solid black;
     width: 20vw;
-    max-height: 200px;
-    height: 30vh;
     min-height: 150px;
     max-height: 400px;
 }
 .blocked{
-    background:crimson
+    background:crimson;
 }
 .active{
     background:rgb(255, 237, 76);
-    cursor:pointer;
+    box-shadow: 0px 0px 22px 22px rgba(232, 226, 28, 0.2);
 }
 .reload-btn{
-    width: 80px;
+    width: 100px;
     height: 20px;
+}
+
+@media (max-width: 500px) {
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    .content{
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        
+    }
+    .control{
+        display: grid;
+        padding-left: 5vw;
+        grid-template-rows: 1fr 1fr;
+        grid-template-columns: none;
+        justify-content: none;
+        padding-left: 15%;
+    }
+    div[class^="am"]{
+        border-radius: 40px; 
+        border: 2px solid black;
+        width: 60vw;
+        min-height: 150px;
+        max-height: 400px;
+        margin-bottom: 40px;
+    }
+    .bar{
+        margin-left: 20%;
+    }
 }
