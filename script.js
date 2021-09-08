@@ -49,13 +49,14 @@ function changeTheme() {
 
 btn.onclick = () => {
     if (x < 56) {
-        x = x + 5 + helper - level * 2;//formula
+        x = x + 5 + helper - level * 2;//formula убрать 100
         value.style.width = x + "vw";
         score += Math.round(x * scale);
         out.innerHTML = `Your level is ${level}!!!<br> Your score is ${score}!!!`;
         CheckHelps1();
         CheckHelps2();
         changeTheme();
+        //Fair(); // test
     } else {
         x = 6;
         level++

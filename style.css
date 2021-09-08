@@ -104,8 +104,18 @@ div[class^="am"]{
     box-shadow: 0px 0px 22px 22px rgba(232, 226, 28, 0.2);
 }
 .reload-btn{
-    width: 100px;
-    height: 20px;
+    /* width: 100px;
+    height: 20px; */
+    cursor: pointer;
+    border: none;
+    padding: 20px 10px;
+    min-width: 150px;
+    width: 10vw;
+    margin: 10vh 30vw;
+    font-size: 1.3em;
+    border-radius: 50%;
+    background: linear-gradient(176deg, rgba(0,212,255,1) 0%, rgba(21,92,107,1) 100%);
+    color:rgb(0, 0, 0);
 }
 
 @media (max-width: 500px) {
@@ -137,5 +147,11 @@ div[class^="am"]{
     }
     .bar{
         margin-left: 20%;
+    }
+    .end{
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0 ;
     }
 }
